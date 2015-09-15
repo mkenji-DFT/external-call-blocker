@@ -46,7 +46,7 @@ class Request implements Allower
     /**
      * @return HttpFoundation\Response
      */
-    public function sendBlockedResponse()
+    public function block()
     {
         $response = new HttpFoundation\Response();
         $response->setStatusCode(HttpFoundation\Response::HTTP_PRECONDITION_FAILED);

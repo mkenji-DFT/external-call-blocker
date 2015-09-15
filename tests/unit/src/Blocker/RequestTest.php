@@ -53,11 +53,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         new \Dafiti\Blocker\Request($domains);
     }
 
-    public function testSendBlockedResponseShouldReturnResponseWith412StatusCode()
+    public function testBlockShouldReturn412StatusCode()
     {
         $domains = [".dafiti.com.br", ".dafitisports.com.br", ".grendene.com.br"];
         $blocker = new \Dafiti\Blocker\Request($domains);
-        $result = $blocker->sendBlockedResponse();
+        $result = $blocker->block();
         $expected = \Symfony\Component\HttpFoundation\Response::HTTP_PRECONDITION_FAILED;
         $this->assertEquals($expected, $result->getStatusCode());
     }
