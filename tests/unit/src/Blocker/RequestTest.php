@@ -62,4 +62,15 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result->getStatusCode());
     }
 
+    public function testIsAllowedWithNoRefererShouldReturnFalse()
+    {
+        $domains = [".dafiti.com.br"];
+        $_SERVER["HTTP_REFERER"] = "";
+        $blocker = new \Dafiti\Blocker\Request($domains);
+        $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
+        $result = $blocker->isAllowed($request);
+
+        $this->assertFalse($result);
+    }
+
 }
