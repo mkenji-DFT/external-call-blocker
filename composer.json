@@ -1,0 +1,32 @@
+{
+    "name": "dafiti/blocker",
+    "description": "External Call Blocker ",
+    "keywords": ["http"],
+    "type": "library",
+    "authors": [
+        {
+          "name": "Pedro Ribeiro da Silva Neto",
+          "email": "pedro.neto@dafiti.com.br",
+          "role": "Developer"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "2.7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.5.*",
+        "phploc/phploc": "2.1.*",
+        "sebastian/phpcpd": "2.0.*",
+        "pdepend/pdepend" : "2.0.*",
+        "phpmd/phpmd" : "2.2.*",
+        "squizlabs/php_codesniffer": "2.3.*",
+        "phpdocumentor/phpdocumentor": "2.8.*",
+        "mayflower/php-codebrowser": "1.1.*",
+        "fabpot/php-cs-fixer": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dafiti\\Blocker\\": "src/Blocker/"
+        }
+    }
+}
